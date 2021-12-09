@@ -1,7 +1,6 @@
 <template>
-  <div class="p-4">
-    <font-awesome-icon icon="home" />Waheguru 13 shukar hai! Dhan Guru Nanak Dev
-    Sahib ji!
+  <div class="w-16">
+    <img src="~/assets/AIRWE-LOGO.png" alt="Airwe Logo" />
   </div>
 </template>
 
