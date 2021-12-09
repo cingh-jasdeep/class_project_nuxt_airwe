@@ -12,7 +12,7 @@
           xl:prose-2xl
           mx-auto
         "
-        :document="{ body: home.about }"
+        :document="home.pa.main"
       />
     </div>
   </div>
@@ -23,7 +23,10 @@ import Vue from 'vue'
 
 export default Vue.extend({
   async asyncData({ $content }) {
-    const home = await $content('content/home').fetch()
+    const home = await $content('home').fetch()
+    //  parse markdowns for main
+    home.pa.main = await $content('main.en').fetch()
+    home.en.main = await $content('main.pa').fetch()
 
     return {
       home,
