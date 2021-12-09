@@ -4,19 +4,16 @@
       <img src="~/assets/AIRWE-LOGO.png" alt="Airwe Logo" />
     </div>
     <div>
-      <div v-for="post of posts" :key="post.slug">
-        <h2 :to="post.slug">{{ post.title }}</h2>
-        <nuxt-content
-          class="
-            prose prose-blue prose-sm
-            sm:prose
-            lg:prose-lg
-            xl:prose-2xl
-            mx-auto
-          "
-          :document="post"
-        />
-      </div>
+      <nuxt-content
+        class="
+          prose prose-blue prose-sm
+          sm:prose
+          lg:prose-lg
+          xl:prose-2xl
+          mx-auto
+        "
+        :document="{ body: home.about }"
+      />
     </div>
   </div>
 </template>
@@ -26,10 +23,10 @@ import Vue from 'vue'
 
 export default Vue.extend({
   async asyncData({ $content }) {
-    const posts = await $content('blog').fetch()
+    const home = await $content('content/home').fetch()
 
     return {
-      posts,
+      home,
     }
   },
   head() {

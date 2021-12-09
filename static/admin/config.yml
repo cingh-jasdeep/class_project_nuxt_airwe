@@ -5,17 +5,26 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+i18n:
+  structure: multiple_folders
+  locales: [en, pa]
+
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
-    format: 'frontmatter'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: 'Pages'
+    name: 'pages'
+    delete: false # Prevent users from deleting documents in this collection
+    i18n:
+      structure: single_file
+    files:
+      - name: 'home'
+        label: 'Home Page'
+        file: 'content/home.json'
+        format: 'frontmatter'
+        i18n: true
+        fields:
+          - {
+              label: 'Main Message by Babaji',
+              name: 'main',
+              widget: 'markdown',
+              i18n: true,
+            }
