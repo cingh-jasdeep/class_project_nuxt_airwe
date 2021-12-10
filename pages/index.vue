@@ -4,17 +4,16 @@
       <img src="~/assets/AIRWE-LOGO.png" alt="Airwe Logo" />
     </div>
     <div>
-      <nuxt-content
-        class="
+      <nuxt-content :document="home.pa.babaji_message" />
+      <!-- class="
           prose prose-blue prose-sm
           sm:prose
           lg:prose-lg
           xl:prose-2xl
           mx-auto
-        "
-        :document="{ body: home.en.body }"
-      />
+        " -->
     </div>
+    <div class="text-3xl">Waheguru</div>
   </div>
 </template>
 
@@ -25,8 +24,7 @@ export default Vue.extend({
   async asyncData({ $content, error }) {
     let home: any
     try {
-      home = await $content('home').fetch()
-      console.dir(home)
+      home = await $content('home_with_md').fetch()
     } catch (e) {
       error({ message: 'Content file not found' })
     }

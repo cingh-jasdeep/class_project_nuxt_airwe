@@ -1,7 +1,7 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-
+  devtools: true,
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -21,7 +21,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -33,16 +33,22 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome',
+    '@nuxt/postcss8',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxt/content'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
+  },
   fontawesome: {
     icons: {
       solid: ['faHome'],
@@ -54,9 +60,10 @@ export default {
   },
   hooks: {
     'content:file:beforeInsert': async (document, database) => {
-      if (document.extension === '.json' && document.hasMd) {
+      if (document.extension === '.json' && document.slug.includes('with_md')) {
         //  parse all subtrees and convert get convert body properties from md string to md json
         //  src:https://stackoverflow.com/a/51689004/10030480
+
         const mdBodyToJson = async function (obj) {
           for (const key in obj) {
             if (typeof obj[key] === 'object') {

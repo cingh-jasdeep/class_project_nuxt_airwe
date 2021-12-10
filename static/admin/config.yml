@@ -4,29 +4,48 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+local_backend: true
 
 i18n:
   structure: multiple_folders
   locales: [en, pa]
 
 collections:
-  - label: 'Pages'
-    name: 'pages'
+  - label: 'Content'
+    name: 'content'
     delete: false # Prevent users from deleting documents in this collection
     i18n:
       structure: single_file
     files:
-      - name: 'home'
-        label: 'Home Page'
-        file: 'content/home.json'
-        i18n:
-          structure: single_file
+      - name: 'home_texts'
+        label: 'Home Page Texts'
+        file: 'content/home_with_md.json'
+        i18n: true
         fields:
-          - {label: "Has md text", name: "hasMd", widget: "hidden", default: true,i18n: false}
-          - label: 'Main Message by Babaji',
-            name: 'body',
-            widget: 'object',
-            collapsed: true,
+          - label: 'Gurbani line'
+            name: 'gurbani_line'
+            widget: 'string'
+            i18n: true
+          - label: 'Front message'
+            name: 'front_message'
+            widget: 'string'
+            i18n: true
+          - label: 'Main Message by Babaji'
+            name: 'babaji_message'
+            widget: 'object'
+            i18n: true
             fields:
-              - {label: "Body", name: "body", widget: "markdown", i18n: true}
-              
+              - { label: 'Body', name: 'body', widget: 'markdown', i18n: true }
+          - label: 'Testimonial Details'
+            name: 'testimonial'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Body', name: 'body', widget: 'markdown', i18n: true }
+              - {
+                  label: 'Youtube Video Id',
+                  name: 'yt_id',
+                  widget: 'string',
+                  i18n: duplicate,
+                  hint: 'Please input valid youtube id. https://www.easterseals.com/assets/includes/youtube-id.html Available in EN only.',
+                }
