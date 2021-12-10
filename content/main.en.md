@@ -1,1 +1,0 @@
-#### The motive of this program is to build human beings of strong character, who follow the Sikh Rehat Maryada, and are attached to Gurbani.

@@ -52,4 +52,26 @@ export default {
     // Options
     liveEdit: false,
   },
+  hooks: {
+    'content:file:beforeInsert': async (document, database) => {
+      if (document.extension === '.json' && document.hasMd) {
+        //  parse all subtrees and convert get convert body properties from md string to md json
+        //  src:https://stackoverflow.com/a/51689004/10030480
+        const mdBodyToJson = async function (obj) {
+          for (const key in obj) {
+            if (typeof obj[key] === 'object') {
+              mdBodyToJson(obj[key])
+            }
+          }
+
+          if ('body' in obj) {
+            obj.body = await database.markdown.toJSON(obj.body)
+            obj.body = obj.body.body
+          }
+        }
+
+        await mdBodyToJson(document)
+      }
+    },
+  },
 }

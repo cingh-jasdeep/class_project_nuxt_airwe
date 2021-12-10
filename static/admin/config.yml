@@ -10,31 +10,23 @@ i18n:
   locales: [en, pa]
 
 collections:
-  - label: 'Content'
-    name: 'content'
+  - label: 'Pages'
+    name: 'pages'
     delete: false # Prevent users from deleting documents in this collection
     i18n:
       structure: single_file
     files:
-      - name: 'main-en'
-        label: 'Main Message by Babaji in English'
-        file: 'content/main.en.md'
-        format: 'frontmatter'
-        i18n: false
+      - name: 'home'
+        label: 'Home Page'
+        file: 'content/home.json'
+        i18n:
+          structure: single_file
         fields:
-          - {
-              label: 'Main Message by Babaji in English',
-              name: 'main',
-              widget: 'markdown',
-            }
-      - name: 'main-pa'
-        label: 'Main Message by Babaji in Punjabi'
-        file: 'content/main.pa.md'
-        format: 'frontmatter'
-        i18n: false
-        fields:
-          - {
-              label: 'Main Message by Babaji in Punjabi',
-              name: 'main',
-              widget: 'markdown',
-            }
+          - {label: "Has md text", name: "hasMd", widget: "hidden", default: true,i18n: false}
+          - label: 'Main Message by Babaji',
+            name: 'body',
+            widget: 'object',
+            collapsed: true,
+            fields:
+              - {label: "Body", name: "body", widget: "markdown", i18n: true}
+              
