@@ -11,7 +11,7 @@ i18n:
   locales: [en, pa]
 
 collections:
-  - label: 'Content'
+  - label: 'Website Content'
     name: 'content'
     delete: false # Prevent users from deleting documents in this collection
     i18n:
@@ -48,4 +48,39 @@ collections:
                   widget: 'string',
                   i18n: duplicate,
                   hint: 'Please input valid youtube id. https://www.easterseals.com/assets/includes/youtube-id.html Available in EN only.',
+                }
+      - name: 'prachar_events'
+        label: 'Prachar Events'
+        file: 'content/prachar_events.json'
+        i18n: true
+        hint: 'Events would be displayed newest to oldest in the website, ignoring the order here'
+        fields:
+          - label: 'Events'
+            name: 'events_list'
+            widget: 'list'
+            i18n: true
+            fields:
+              - {
+                  label: 'Date',
+                  name: 'date',
+                  widget: 'datetime',
+                  date_format: true,
+                  time_format: false,
+                  i18n: false,
+                  hint: 'Please enter event date. Available in EN only.',
+                }
+              - {
+                  label: 'Location',
+                  name: 'location',
+                  widget: 'string',
+                  hint: 'Please enter event location. Non EN entries would be mapped to same order as EN.',
+                  i18n: true,
+                }
+              - {
+                  label: 'Event photo',
+                  name: 'photo',
+                  widget: 'image',
+                  choose_url: false,
+                  i18n: false,
+                  hint: 'Please upload event photo. Prefer photos with 16:9 aspect ratio. Available in EN only.',
                 }

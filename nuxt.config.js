@@ -35,6 +35,7 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/fontawesome',
     '@nuxt/postcss8',
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
