@@ -19,7 +19,7 @@ collections:
     files:
       - name: 'home_texts'
         label: 'Home Page Texts'
-        file: 'content/home_with_md.json'
+        file: 'content/home_texts.json'
         i18n: true
         fields:
           - label: 'Gurbani line'
@@ -35,13 +35,15 @@ collections:
             widget: 'object'
             i18n: true
             fields:
-              - { label: 'Body', name: 'body', widget: 'markdown', i18n: true }
+              - { label: 'Body', name: 'body', widget: 'text', i18n: true }
+              - { label: 'Footer', name: 'footer', widget: 'text', i18n: true }
           - label: 'Testimonial Details'
             name: 'testimonial'
             widget: 'object'
             i18n: true
             fields:
-              - { label: 'Body', name: 'body', widget: 'markdown', i18n: true }
+              - { label: 'Body', name: 'body', widget: 'text', i18n: true }
+              - { label: 'Footer', name: 'footer', widget: 'text', i18n: true }
               - {
                   label: 'Youtube Video Id',
                   name: 'yt_id',

@@ -15,44 +15,42 @@
       </select>
     </div>
     <div>
-      <nuxt-content :document="home.en.babaji_message" />
-      <!-- class="
-          prose prose-blue prose-sm
-          sm:prose
-          lg:prose-lg
-          xl:prose-2xl
-          mx-auto
-        " -->
+      <div class="text-3xl">
+        {{ lang(homeTexts, 'gurbani_line') }}
+      </div>
     </div>
     <div class="flex flex-col items-center">
       <div class="text-xl">Prachar Events</div>
-      <div v-for="(event, index) in pracharEvents.en.events_list" :key="index">
+      <div
+        v-for="(event, index) in lang(pracharEvents, 'events_list')"
+        :key="index"
+      >
         <nuxt-img format="webp" :src="event.photo" loading="lazy" />
         <div class="text-center">
           {{ event.location }}<br />{{ event.date }}
         </div>
       </div>
     </div>
-    <div class="text-3xl">Waheguru</div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { supportedLanguages } from '~/constants/index'
+import { supportedLanguages, defaultLanguage } from '~/constants/index'
+const _ = require('lodash')
 
 export default Vue.extend({
   async asyncData({ $content, error }) {
-    let home, pracharEvents: any
+    let homeTexts, pracharEvents: any
     try {
-      home = await $content('home_with_md').fetch()
+      homeTexts = await $content('home_texts').fetch()
       pracharEvents = await $content('prachar_events').fetch()
     } catch (e) {
       error({ message: 'Content files not found' })
     }
 
     return {
-      home,
+      homeTexts,
       pracharEvents,
     }
   },
@@ -77,6 +75,13 @@ export default Vue.extend({
   methods: {
     updateUserLanguage(e: any) {
       this.$store.commit('switchLanguage', e.target.value)
+    },
+    lang(obj: any, path: string) {
+      // first check if userLanguage path has a text
+      return (
+        _.get(obj, this.userLanguage + '.' + path) ??
+        _.get(obj, defaultLanguage + '.' + path)
+      )
     },
   },
 })
