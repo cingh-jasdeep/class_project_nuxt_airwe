@@ -21,7 +21,12 @@
     </div>
     <div class="flex flex-col items-center">
       <div v-for="(event, index) in lang('events_list')" :key="index">
-        <nuxt-img format="webp" :src="event.photo" loading="lazy" />
+        <nuxt-img
+          v-if="event.photo"
+          format="webp"
+          :src="event.photo"
+          loading="lazy"
+        />
         <div class="text-center font-one">
           {{ event.location }}<br />{{ event.date }}
         </div>
