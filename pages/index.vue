@@ -15,18 +15,14 @@
       </select>
     </div>
     <div>
-      <div class="text-3xl">
-        {{ lang(homeTexts, 'gurbani_line') }}
+      <div class="text-3xl font-one">
+        {{ lang('gurbani_line') }}
       </div>
     </div>
     <div class="flex flex-col items-center">
-      <div class="text-xl">Prachar Events</div>
-      <div
-        v-for="(event, index) in lang(pracharEvents, 'events_list')"
-        :key="index"
-      >
+      <div v-for="(event, index) in lang('events_list')" :key="index">
         <nuxt-img format="webp" :src="event.photo" loading="lazy" />
-        <div class="text-center">
+        <div class="text-center font-one">
           {{ event.location }}<br />{{ event.date }}
         </div>
       </div>
@@ -41,21 +37,20 @@ const _ = require('lodash')
 
 export default Vue.extend({
   async asyncData({ $content, error }) {
-    let homeTexts, pracharEvents: any
+    let home: any
     try {
-      homeTexts = await $content('home_texts').fetch()
-      pracharEvents = await $content('prachar_events').fetch()
+      home = await $content('home').fetch()
     } catch (e) {
-      error({ message: 'Content files not found' })
+      error({ message: 'Content file not found' })
     }
 
     return {
-      homeTexts,
-      pracharEvents,
+      home,
     }
   },
   data() {
     return {
+      home: {},
       supportedLanguages,
     }
   },
@@ -76,11 +71,11 @@ export default Vue.extend({
     updateUserLanguage(e: any) {
       this.$store.commit('switchLanguage', e.target.value)
     },
-    lang(obj: any, path: string) {
+    lang(path: string): any {
       // first check if userLanguage path has a text
       return (
-        _.get(obj, this.userLanguage + '.' + path) ??
-        _.get(obj, defaultLanguage + '.' + path)
+        _.get(this.home, this.userLanguage + '.' + path) ??
+        _.get(this.home, defaultLanguage + '.' + path)
       )
     },
   },

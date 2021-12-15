@@ -10,7 +10,14 @@
       "footer": "Jagdeep Kaur, Student"
     },
     "gurbani_line": "So why call her bad? From her, kings are born.",
-    "front_message": "The motive of this program is to build human beings of strong character, who follow the Sikh Rehat Maryada, and are attached to Gurbani."
+    "front_message": "The motive of this program is to build human beings of strong character, who follow the Sikh Rehat Maryada, and are attached to Gurbani.",
+    "events_list": [
+      {
+        "date": "2017-03-04T05:03:51.429Z",
+        "location": "Gurdwara Sri Guru Tegh Bahadur Sahib Ji, Street No. 7, Central Town, Jalandhar",
+        "photo": "/img/event.png"
+      }
+    ]
   },
   "pa": {
     "babaji_message": {
@@ -23,6 +30,13 @@
       "footer": "ਜਗਦੀਪ ਕੌਰ, ਵਿਦਿਆਰਥਣ"
     },
     "gurbani_line": "ਸੋ ਕਿਉ ਮੰਦਾ ਆਖੀਐ ਜਿਤੁ ਜੰਮਹਿ ਰਾਜਾਨ ॥",
-    "front_message": "ਇਸ ਪ੍ਰੋਗਰਾਮ ਦਾ ਉਦੇਸ਼ ਮਜ਼ਬੂਤ ਚਿਰੱਤਰ ਦੇ ਨਾਲ ਰਿਹਤ ਮਿਰਯਾਦਾ ਵਿੱਚ ਰਹਿ ਕੇ ਅਤੇ ਗੁਰਬਾਣੀ ਨਾਲ ਜੁੜ ਕੇ ਇਨਸਾਨੀਅਤ ਦੀ ਸੇਵਾ ਕਰਨ ਵਾਲੇ ਇਨਸਾਨ ਬਣਾਉਣਾ ਹੈ।"
+    "front_message": "ਇਸ ਪ੍ਰੋਗਰਾਮ ਦਾ ਉਦੇਸ਼ ਮਜ਼ਬੂਤ ਚਿਰੱਤਰ ਦੇ ਨਾਲ ਰਿਹਤ ਮਿਰਯਾਦਾ ਵਿੱਚ ਰਹਿ ਕੇ ਅਤੇ ਗੁਰਬਾਣੀ ਨਾਲ ਜੁੜ ਕੇ ਇਨਸਾਨੀਅਤ ਦੀ ਸੇਵਾ ਕਰਨ ਵਾਲੇ ਇਨਸਾਨ ਬਣਾਉਣਾ ਹੈ।",
+    "events_list": [
+      {
+        "date": "2017-03-04T05:03:51.429Z",
+        "location": "ਗੁਰਦੁਆਰਾ ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ਼ ਬਹਾਦਰ ਸਾਹਿਬ ਜੀ, ਗਲੀ ਨੰ-7 ਸੈਂਟਰਲ ਟਾਊਨ, ਜਲੰਧਰ",
+        "photo": "/img/event.png"
+      }
+    ]
   }
 }
