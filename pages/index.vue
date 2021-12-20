@@ -1,7 +1,37 @@
 <template>
+  <!-- main content -->
   <div>
+    <!-- header block -->
+    <div class="p-6 bg-baby-blue flex flex-col items-center">
+      <nuxt-img
+        format="webp"
+        class="w-[62px]"
+        src="/AIRWE-LOGO.png"
+        alt="Airwe Logo"
+      />
+      <div class="mt-2 h-[2px] w-[48px] bg-black" />
+      <div class="mt-2 font-bold font-one text-center text-xl leading-tight">
+        {{ lang('site_title.title') }}<br />{{ lang('site_title.subtitle') }}
+      </div>
+      <!-- lang switcher -->
+      <div
+        class="flex mt-2 rounded-md border-2 border-black divide-x divide-black"
+      >
+        <div
+          v-for="(value, key) in supportedLanguages"
+          :key="key"
+          class="flex-1 p-1 w-12 flex items-center justify-center"
+        >
+          {{ value }}
+        </div>
+      </div>
+    </div>
+    <!-- header block -->
+  </div>
+  <!-- end-main content -->
+  <!-- <div>
     <div class="w-16">
-      <img src="/AIRWE-LOGO.png" alt="Airwe Logo" />
+      <nuxt-img format="webp" src="/AIRWE-LOGO.png" alt="Airwe Logo" />
     </div>
     <div>
       <select :value="userLanguage" @input="updateUserLanguage">
@@ -26,13 +56,14 @@
           format="webp"
           :src="event.photo"
           loading="lazy"
+          :alt="event.location + '-' + event.date"
         />
         <div class="text-center font-one">
           {{ event.location }}<br />{{ event.date }}
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script lang="ts">

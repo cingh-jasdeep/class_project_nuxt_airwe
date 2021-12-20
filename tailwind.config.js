@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         one: ['Mukta Mahee', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        'baby-blue': '#CFE2F3',
+      },
     },
   },
   plugins: [],
