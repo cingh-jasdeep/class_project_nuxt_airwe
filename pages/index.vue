@@ -20,10 +20,52 @@
         <div
           v-for="(value, key) in supportedLanguages"
           :key="key"
-          class="flex-1 p-1 w-12 flex items-center justify-center"
+          :class="{ 'bg-airwe-blue text-white font-bold': key == userLanguage }"
+          class="
+            flex-1
+            p-1
+            w-12
+            flex
+            items-center
+            justify-center
+            cursor-pointer
+            transition-colors
+          "
+          @click="updateUserLanguage(key)"
         >
           {{ value }}
         </div>
+      </div>
+      <!-- menu button -->
+      <div
+        :class="{ 'bg-airwe-blue text-white font-bold': isMenuOpen }"
+        class="
+          flex
+          items-center
+          justify-center
+          mt-2
+          py-1
+          px-2
+          rounded-md
+          cursor-pointer
+          transition-colors
+          border-2 border-black
+          divide-x divide-black
+        "
+        @click="isMenuOpen = !isMenuOpen"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="mr-2 h-6 w-6 stroke-current stroke-2"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          /></svg
+        >{{ lang('button_labels.menu') }}
       </div>
     </div>
     <!-- header block -->
@@ -88,6 +130,7 @@ export default Vue.extend({
     return {
       home: {},
       supportedLanguages,
+      isMenuOpen: false,
     }
   },
   head() {
@@ -104,8 +147,8 @@ export default Vue.extend({
   },
   watch: {},
   methods: {
-    updateUserLanguage(e: any) {
-      this.$store.commit('switchLanguage', e.target.value)
+    updateUserLanguage(langKey: string) {
+      this.$store.commit('switchLanguage', langKey)
     },
     lang(path: string): any {
       // first check if userLanguage path has a text

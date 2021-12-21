@@ -15,6 +15,7 @@ module.exports = {
       },
       colors: {
         'baby-blue': '#CFE2F3',
+        'airwe-blue': '#005197',
       },
     },
   },
