@@ -4,7 +4,9 @@ export default {
   devtools: true,
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  router: {
+    base: '/class_project_nuxt_airwe/'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'starter_nuxt',
