@@ -2,6 +2,7 @@ backend:
   name: github
   repo: cingh-jasdeep/class_project_nuxt_airwe
   branch: master # Branch to update (optional; defaults to master)
+  site_domain: airwe-project-site.netlify.app
 
 media_folder: static/img
 public_folder: /img
