@@ -1,0 +1,189 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: static/img
+public_folder: /img
+local_backend: true
+
+i18n:
+  structure: multiple_folders
+  locales: [en, pa]
+
+collections:
+  - label: 'Pages'
+    name: 'pages'
+    delete: false # Prevent users from deleting documents in this collection
+    i18n:
+      structure: single_file
+    files:
+      - name: 'home'
+        label: 'Home Page'
+        file: 'content/home.json'
+        i18n: true
+        fields:
+          - label: 'Site Title'
+            name: 'site_title'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+              - {
+                  label: 'Subtitle',
+                  name: 'subtitle',
+                  widget: 'string',
+                  i18n: true,
+                }
+
+          - label: 'Gurbani line'
+            name: 'gurbani_line'
+            widget: 'string'
+            i18n: true
+
+          - label: 'Front message'
+            name: 'front_message'
+            widget: 'string'
+            i18n: true
+
+          - label: 'Main Message by Babaji'
+            name: 'babaji_message'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Body', name: 'body', widget: 'text', i18n: true }
+              - { label: 'Footer', name: 'footer', widget: 'text', i18n: true }
+
+          - label: 'Testimonial Details'
+            name: 'testimonial'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Body', name: 'body', widget: 'text', i18n: true }
+              - { label: 'Footer', name: 'footer', widget: 'text', i18n: true }
+              - {
+                  label: 'Youtube Video Id',
+                  name: 'yt_id',
+                  widget: 'string',
+                  i18n: duplicate,
+                  hint: 'Please input valid youtube video id. https://www.easterseals.com/assets/includes/youtube-id.html Available in EN only.',
+                }
+
+          - label: 'Prospectus File'
+            name: 'prospectus_file'
+            widget: 'file'
+            i18n: true
+            choose_url: false
+
+          - label: 'Events'
+            name: 'events_list'
+            widget: 'list'
+            i18n: true
+            fields:
+              - {
+                  label: 'Date',
+                  name: 'date',
+                  widget: 'datetime',
+                  date_format: true,
+                  time_format: false,
+                  i18n: true,
+                }
+              - {
+                  label: 'Location',
+                  name: 'location',
+                  widget: 'string',
+                  i18n: true,
+                }
+              - {
+                  label: 'Event photo',
+                  name: 'photo',
+                  widget: 'image',
+                  choose_url: false,
+                  i18n: true,
+                  hint: 'Please upload event photo. Prefer photos with 16:9 aspect ratio.',
+                }
+
+          - label: 'Events Details File'
+            name: 'events_details_file'
+            widget: 'file'
+            i18n: true
+            choose_url: false
+
+          - label: 'Gallery Items'
+            name: 'gallery_items'
+            widget: 'list'
+            i18n: true
+            fields:
+              - {
+                  label: 'Youtube Video Id / Playlist Id',
+                  name: 'yt_id',
+                  widget: 'string',
+                  i18n: true,
+                  hint: 'Please input valid youtube video or playlist id. https://www.easterseals.com/assets/includes/youtube-id.html https://www.sociablekit.com/find-youtube-playlist-id/',
+                }
+              - {
+                  label: 'Is Playlist?',
+                  name: 'is_playlist',
+                  widget: 'boolean',
+                  i18n: true,
+                  hint: 'Please mention if id above is playlist id',
+                }
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+
+          - label: 'Site Footer'
+            name: 'site_footer'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Line1', name: 'line1', widget: 'string', i18n: true }
+              - { label: 'Line2', name: 'line2', widget: 'string', i18n: true }
+              - { label: 'Line3', name: 'line3', widget: 'string', i18n: true }
+              - { label: 'Line4', name: 'line4', widget: 'string', i18n: true }
+
+          - label: 'Menu Items / Headings'
+            name: 'menu_items'
+            widget: 'object'
+            i18n: true
+            fields:
+              - {
+                  label: 'About Us',
+                  name: 'about_us',
+                  widget: 'string',
+                  i18n: true,
+                }
+              - {
+                  label: 'Prospectus',
+                  name: 'prospectus',
+                  widget: 'string',
+                  i18n: true,
+                }
+              - {
+                  label: 'Gurmat Prachar',
+                  name: 'gurmat_prachar',
+                  widget: 'string',
+                  i18n: true,
+                }
+              - {
+                  label: 'Gallery',
+                  name: 'gallery',
+                  widget: 'string',
+                  i18n: true,
+                }
+
+          - label: 'Button Labels'
+            name: 'button_labels'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Menu', name: 'menu', widget: 'string', i18n: true }
+              - {
+                  label: 'Learn More',
+                  name: 'learn_more',
+                  widget: 'string',
+                  i18n: true,
+                }
+              - {
+                  label: 'Download Prospectus',
+                  name: 'download_prospectus',
+                  widget: 'string',
+                  i18n: true,
+                }
