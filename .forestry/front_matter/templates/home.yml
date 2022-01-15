@@ -52,7 +52,7 @@ fields:
     - type: textarea
       name: body
       label: body
-    - type: text
+    - type: textarea
       name: footer
       label: footer
   - type: field_group
@@ -116,7 +116,7 @@ fields:
     - type: textarea
       name: body
       label: body
-    - type: text
+    - type: textarea
       name: footer
       label: footer
   - type: file
@@ -172,7 +172,7 @@ fields:
     - type: textarea
       name: body
       label: body
-    - type: text
+    - type: textarea
       name: footer
       label: footer
   - type: field_group
@@ -198,15 +198,15 @@ fields:
     name: gallery_items
     label: gallery_items
     fields:
-    - type: text
-      name: title
-      label: title
     - type: boolean
       name: is_playlist
       label: is_playlist
     - type: text
       name: yt_id
       label: yt_id
+    - type: text
+      name: title
+      label: title
   - type: field_group
     name: site_footer
     label: site_footer
@@ -230,13 +230,13 @@ fields:
     name: testimonial
     label: testimonial
     fields:
-    - type: textarea
-      name: body
-      label: body
     - type: text
       name: yt_id
       label: yt_id
-    - type: text
+    - type: textarea
+      name: body
+      label: body
+    - type: textarea
       name: footer
       label: footer
   - type: file
