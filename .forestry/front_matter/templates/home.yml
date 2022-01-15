@@ -1,0 +1,244 @@
+---
+label: Home
+hide_body: true
+fields:
+- type: field_group
+  name: en
+  label: en
+  fields:
+  - type: field_group
+    name: menu_items
+    label: menu_items
+    fields:
+    - type: text
+      name: about_us
+      label: about_us
+    - type: text
+      name: prospectus
+      label: prospectus
+    - type: text
+      name: gurmat_prachar
+      label: gurmat_prachar
+    - type: text
+      name: gallery
+      label: gallery
+  - type: field_group
+    name: site_title
+    label: site_title
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: subtitle
+      label: subtitle
+  - type: field_group_list
+    name: events_list
+    label: events_list
+    fields:
+    - type: datetime
+      name: date
+      label: date
+    - type: text
+      name: location
+      label: location
+    - type: file
+      name: photo
+      label: photo
+  - type: field_group
+    name: babaji_message
+    label: babaji_message
+    fields:
+    - type: textarea
+      name: body
+      label: body
+    - type: text
+      name: footer
+      label: footer
+  - type: field_group
+    name: button_labels
+    label: button_labels
+    fields:
+    - type: text
+      name: menu
+      label: menu
+    - type: text
+      name: learn_more
+      label: learn_more
+    - type: text
+      name: download_prospectus
+      label: download_prospectus
+  - type: file
+    name: prospectus_file
+    label: prospectus_file
+  - type: textarea
+    name: front_message
+    label: front_message
+  - type: field_group_list
+    name: gallery_items
+    label: gallery_items
+    fields:
+    - type: boolean
+      name: is_playlist
+      label: is_playlist
+    - type: text
+      name: yt_id
+      label: yt_id
+    - type: text
+      name: title
+      label: title
+  - type: field_group
+    name: site_footer
+    label: site_footer
+    fields:
+    - type: text
+      name: line1
+      label: line1
+    - type: text
+      name: line2
+      label: line2
+    - type: text
+      name: line3
+      label: line3
+    - type: text
+      name: line4
+      label: line4
+  - type: text
+    name: gurbani_line
+    label: gurbani_line
+  - type: field_group
+    name: testimonial
+    label: testimonial
+    fields:
+    - type: text
+      name: yt_id
+      label: yt_id
+    - type: textarea
+      name: body
+      label: body
+    - type: text
+      name: footer
+      label: footer
+  - type: file
+    name: events_details_file
+    label: events_details_file
+- type: field_group
+  name: pa
+  label: pa
+  fields:
+  - type: field_group
+    name: menu_items
+    label: menu_items
+    fields:
+    - type: text
+      name: about_us
+      label: about_us
+    - type: text
+      name: prospectus
+      label: prospectus
+    - type: text
+      name: gurmat_prachar
+      label: gurmat_prachar
+    - type: text
+      name: gallery
+      label: gallery
+  - type: field_group
+    name: site_title
+    label: site_title
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: subtitle
+      label: subtitle
+  - type: field_group_list
+    name: events_list
+    label: events_list
+    fields:
+    - type: datetime
+      name: date
+      label: date
+    - type: text
+      name: location
+      label: location
+    - type: file
+      name: photo
+      label: photo
+  - type: field_group
+    name: babaji_message
+    label: babaji_message
+    fields:
+    - type: textarea
+      name: body
+      label: body
+    - type: text
+      name: footer
+      label: footer
+  - type: field_group
+    name: button_labels
+    label: button_labels
+    fields:
+    - type: text
+      name: menu
+      label: menu
+    - type: text
+      name: learn_more
+      label: learn_more
+    - type: text
+      name: download_prospectus
+      label: download_prospectus
+  - type: file
+    name: prospectus_file
+    label: prospectus_file
+  - type: textarea
+    name: front_message
+    label: front_message
+  - type: field_group_list
+    name: gallery_items
+    label: gallery_items
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: boolean
+      name: is_playlist
+      label: is_playlist
+    - type: text
+      name: yt_id
+      label: yt_id
+  - type: field_group
+    name: site_footer
+    label: site_footer
+    fields:
+    - type: text
+      name: line1
+      label: line1
+    - type: text
+      name: line2
+      label: line2
+    - type: text
+      name: line3
+      label: line3
+    - type: text
+      name: line4
+      label: line4
+  - type: text
+    name: gurbani_line
+    label: gurbani_line
+  - type: field_group
+    name: testimonial
+    label: testimonial
+    fields:
+    - type: textarea
+      name: body
+      label: body
+    - type: text
+      name: yt_id
+      label: yt_id
+    - type: text
+      name: footer
+      label: footer
+  - type: file
+    name: events_details_file
+    label: events_details_file
