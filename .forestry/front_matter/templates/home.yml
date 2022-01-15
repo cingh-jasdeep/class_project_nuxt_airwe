@@ -242,3 +242,5 @@ fields:
   - type: file
     name: events_details_file
     label: events_details_file
+pages:
+- content/home.json
